@@ -57,8 +57,9 @@ const FileTableRow: FC<FileTableRowProps> = ({ FetchData }) => {
               />
             ) : (
               <img
+                crossOrigin="anonymous"
                 referrerPolicy="no-referrer"
-                src={FetchData.thumbnailUrl.slice(32)}
+                src={`${C.PROXY}/${FetchData.thumbnailUrl}`}
                 alt=""
               />
             )}

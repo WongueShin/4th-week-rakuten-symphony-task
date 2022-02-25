@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import * as T from "types";
 import * as U from "utils/DataConverter";
+import * as C from "constant";
 
 interface FileListProps {
   fileList: T.FileType[];
@@ -22,10 +23,11 @@ const FileListItemInfo: React.FC<FileListProps> = ({ fileList }) => {
                   }}
                 />
               ) : (
-                <span
-                  style={{
-                    backgroundImage: `url(${item.thumbnailUrl.slice(32)})`,
-                  }}
+                <img
+                  crossOrigin="anonymous"
+                  referrerPolicy="no-referrer"
+                  src={`${C.PROXY}/${item.thumbnailUrl}`}
+                  alt=""
                 />
               )}
               <span>{item.name}</span>
@@ -61,6 +63,16 @@ const FileItemInfo = styled.div`
     background-repeat: no-repeat;
     background-position: center center;
   }
+  img:first-child {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
 `;
 
 const FileItemSize = styled.div``;

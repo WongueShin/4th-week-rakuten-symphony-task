@@ -55,7 +55,7 @@ const DetailPage: React.FC<DetailePageProps> = ({ LinkFileData, keyArr }) => {
             {DetailData.thumbnailUrl.slice(
               DetailData.thumbnailUrl.length - 3
             ) === "svg" ? (
-              <Image
+              <ImageSpan
                 isValidLink={isValidLink}
                 style={{
                   backgroundImage: `url(/svgs/default.svg)`,
@@ -64,9 +64,10 @@ const DetailPage: React.FC<DetailePageProps> = ({ LinkFileData, keyArr }) => {
             ) : (
               <Image
                 isValidLink={isValidLink}
-                style={{
-                  backgroundImage: `url(${DetailData.thumbnailUrl.slice(32)})`,
-                }}
+                crossOrigin="anonymous"
+                referrerPolicy="no-referrer"
+                src={`${C.PROXY}/${DetailData.thumbnailUrl}`}
+                alt=""
               />
             )}
           </LinkImage>
@@ -195,13 +196,20 @@ const LinkImage = styled.div`
   }
 `;
 
-const Image = styled.span<{ isValidLink: boolean }>`
+const ImageSpan = styled.span<{ isValidLink: boolean }>`
   width: 120px;
   display: inline-block;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   padding-bottom: 100%;
+  filter: ${(props) => (props.isValidLink ? "none" : "grayscale(1)")};
+`;
+const Image = styled.img<{ isValidLink: boolean }>`
+  width: 120px;
+  display: inline-block;
+  padding-bottom: calc(50% - 60px);
+  padding-top: calc(50% - 60px);
   filter: ${(props) => (props.isValidLink ? "none" : "grayscale(1)")};
 `;
 
