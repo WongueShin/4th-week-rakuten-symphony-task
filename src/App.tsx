@@ -8,12 +8,14 @@ import GlobalStyle from "styles/GlobalStyle";
 import * as C from "constant";
 import * as T from "types";
 import { Data } from "MockData";
+const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+const URL = `${PROXY}${C.FETCHURL}`;
 
 function App() {
   const [LinkFileData, setListFileData] = useState<T.FetchDataType[]>([]);
 
   useEffect(() => {
-    fetch(C.FETCHURL)
+    fetch(URL)
       .then((res) => res.json())
       .then((data) => setListFileData(data));
   }, []);
