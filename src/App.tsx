@@ -13,7 +13,9 @@ const URL = `${PROXY}${C.FETCHURL}`;
 
 function App() {
   const [LinkFileData, setListFileData] = useState<T.FetchDataType[]>([]);
-
+  console.log(URL);
+  fetch(URL)
+  .then((res) => console.log(res));
   useEffect(() => {
     fetch(URL)
       .then((res) => res.json())
