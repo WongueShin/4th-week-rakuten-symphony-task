@@ -11,7 +11,6 @@ interface LinkPageProps {
 }
 
 const LinkPage: FC<LinkPageProps> = ({ LinkFileData }) => {
-  console.log(LinkFileData);
   return (
     <>
       <Title>마이 링크</Title>

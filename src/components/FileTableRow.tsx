@@ -14,10 +14,7 @@ interface FileTableRowProps {
 }
 
 const FileTableRow: FC<FileTableRowProps> = ({ FetchData }) => {
-  //console.log(`start : ${U.DateConverter(FetchData.created_at+C.TIMEREVISION)}`,`expired: ${U.DateConverter(FetchData.expires_at+C.TIMEREVISION)}`,`${new Date(new Date((FetchData.expires_at+C.TIMEREVISION)* 1000).getTime() - new Date().getTime())}`)
   const [Period, setPeriod] = useState<string>();
-  //유효기간 48시간 이하
-  //console.log(U.ExpirationPeriod(1642414932));
 
   useEffect(() => {
     setPeriod(U.ExpirationPeriod(FetchData.expires_at));

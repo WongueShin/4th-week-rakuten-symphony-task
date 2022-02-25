@@ -19,7 +19,6 @@ function App() {
 
   let keyArr: Array<string | undefined> = [];
   if (LinkFileData.length > 0) {
-    console.log(LinkFileData);
     LinkFileData.map((item, idex) => {
       keyArr.push(item?.key);
     });
