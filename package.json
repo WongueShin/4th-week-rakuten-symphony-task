@@ -1,6 +1,5 @@
 {
   "name": "rakuten-symphony-transfer",
-  "proxy": "https://storage-fe.fastraffic.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
