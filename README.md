@@ -1,6 +1,7 @@
 # 라쿠텐심포니 코리아 Frontend Developer 기술 과제
 
-### [Go Demo🚀](https://github.com/PreOnboardingTeam-16/)
+### [Go Demo🚀](https://62190ffe18b09e0007065e11--naughty-wescoff-ff743b.netlify.app/)
+ url = https://62190ffe18b09e0007065e11--naughty-wescoff-ff743b.netlify.app/
 
 ## Member
 
